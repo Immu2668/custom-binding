@@ -1,0 +1,31 @@
+<app-search
+(searchTextChange) = "onSearch($event)"></app-search>
+<app-filter 
+[all] = "getAllCoursesCount()"
+[premium]="getPremiumCoursesCount()" 
+[free]="getFreeCoursesCount()"
+(filterChange) = "onSelectionChange($event)"></app-filter>
+<div class="course-list">
+     <div class="row">
+          <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let course of courses">
+               <div class="card shadow mt-5">
+                    <div class="card-header text-center text-primary">
+                         <h4 class="card-title">{{course.name}}</h4>
+                    </div>
+                    <div class="card-body">
+                         <img [src]="course.image" alt="" class="card-image">
+                         <div class="row mt-2">
+                              <p class="h4 text-center">Duration: {{course.duration}}</p>
+                         </div>
+                         <div class="row">
+                              <div class="h4 text-center">Author: {{course.author}}</div>
+                         </div>
+                         <div class="row mt-3">
+                              <div class="col h4" [ngStyle]="{color: (course.type === 'Premium') ? 'red': 'green'}">{{course.type}}</div>
+                              <div class="col h4" [ngStyle]="{color: (course.type === 'Premium') ? 'red': 'green'}">Price: Rs. {{course.price}}</div>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </div>
+</div>

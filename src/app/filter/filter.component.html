@@ -1,0 +1,25 @@
+<div class="container">
+     <form action="" class="form-control d-flex justify-content-center">
+          <div class="all me-3">
+               <input type="radio" name="course" value="all"
+               [(ngModel)]="selectedRadioButtonValue"
+               (change)="onFilterOptionChange()">
+               <span><label for="">{{'All ('+
+                    all+')'}}</label></span>
+          </div>
+          <div class="premium me-3">
+               <input type="radio" name="course" value="premium"
+               [(ngModel)]="selectedRadioButtonValue"
+               (change)="onFilterOptionChange()">
+               <span><label for="">{{'Premium ('+
+                    premium+')'}}</label></span>
+          </div>
+          <div class="free">
+               <input type="radio" name="course" value="free"
+               [(ngModel)]="selectedRadioButtonValue"
+               (change)="onFilterOptionChange()">
+               <span><label for="">{{'Free ('+
+                    free+')'}}</label></span>
+          </div>
+     </form>
+</div>
